@@ -21,6 +21,45 @@ nav a:hover {
     transition: .9s;
 }
 
+nav a.active {
+    background-color: #828282;
+    text-shadow: 2px 2px 4px #0b285c;
+    padding: 3px 6px;
+}
+
+table {
+    margin: 0px auto;
+}
+
+/* id to identify a single element  */
+#table-header {
+    background-color: rgb(9, 105, 146);
+}
+
+/* class to style a group of elements */
+.table-row {
+    background-color: #deebeb;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+ul {
+    width: 500px;
+    margin: 0px auto;
+    text-align: left;
+}
+
+.hobby {
+    color: yellow
+}
+
 main {
     display: flex;
     justify-content: center;;
