@@ -4,7 +4,7 @@ body {
 }
 
 header, main, nav {
-        text-align: center;
+    text-align: center;
 }
 
 nav a {
@@ -13,6 +13,11 @@ nav a {
     font-size: 1.8em;
     text-decoration: none;
     color: white;
+
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 nav a:hover {
@@ -63,6 +68,21 @@ ul {
 main {
     display: flex;
     justify-content: center;;
+}
+
+h1 {
+  font-family: "Meow Script", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 footer {
