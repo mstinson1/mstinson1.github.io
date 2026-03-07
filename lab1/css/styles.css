@@ -1,10 +1,24 @@
 body {
     background-color: black;
-    color: gray;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+header {
+    margin-bottom: 10px;
 }
 
 header, main, nav {
     text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 nav a {
@@ -21,15 +35,17 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 2px orange solid;
-    font-size: 2em;
+    border-bottom: 2px yellow solid;
+    color: rgb(152, 221, 255);
     transition: .9s;
 }
 
 nav a.active {
     background-color: #828282;
+    color: white;
     text-shadow: 2px 2px 4px #0b285c;
-    padding: 3px 6px;
+    padding: 4px 8px;
+    border-radius: 6px;
 }
 
 table {
@@ -38,54 +54,94 @@ table {
 
 /* id to identify a single element  */
 #table-header {
-    background-color: rgb(9, 105, 146);
+    background-color: #1f4c81;
+    text-shadow: 2px 2px 4px #0b285c;
 }
 
 /* class to style a group of elements */
 .table-row {
-    background-color: #deebeb;
+    background-color: #dfe8f2;
+    color: #1a2b44;
 }
 
 td {
+    padding-left: 10px;
     padding-right: 10px;
     font-size: 1.3em;
 }
 
 td strong {
-    color: orange;
+    color: #6fa3cc;
 }
 
 ul {
     width: 500px;
     margin: 0px auto;
     text-align: left;
+    line-height: 1.5em;
 }
 
 .hobby {
-    color: yellow
+    color: #6fa3cc;
 }
 
 main {
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.quote {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #cfd8e3;
 }
 
 h1 {
   font-family: "Meow Script", cursive;
   font-weight: 500;
   font-style: normal;
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: #4f8fc4;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+figure img {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#headshot {
+    width: 400px;   
+}
+
+.group-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px auto;
+    max-width: 1200px;
+}
+
+.group-name {
+    color: #6fa3cc;
+}
+
+.group-logo img {
+    width: 300px;
+}
+
+footer img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
 }
 
 footer {
     font-size: smaller;
     color: #8fa0bd;
+    margin-top: 30px;
 }
