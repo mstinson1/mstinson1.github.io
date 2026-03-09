@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(229, 229, 229);
+    /* Lora Font */
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+header {
+    margin-bottom: 10px;
+}
+
+header, main, nav {
+    text-align: left;
+}
+
+h1, h2, h3 {
+    /* Montserrat Font */
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+nav {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 1.8em;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+    /* Oswald Font */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+nav a:hover {
+    border-bottom: 5px solid red;
+    background-color: rgb(255, 255, 255);
+    transition: .9s;
+}
+
+nav a.active {
+    background-color: rgb(255, 255, 255);
+    color: red;
+    border-radius: 6px;
+    text-shadow: 2px 2px 1px rgb(199, 199, 199);
+}
+
+figure {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    text-align: left;
+}
+
+footer {
+    text-align: center;
+    /* Google Sans Font */
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: small;
+    font-style: normal;
+    font-variation-settings:
+    "GRAD" 0;
+}

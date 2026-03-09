@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>How Search Engines Work: Crawling</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Oswald Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Google Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -11,7 +23,7 @@
     <hr>
     <nav>
         <a href="index.html">Home</a>
-        <a href="crawling.html">Crawling</a>
+        <a class="active" href="crawling.html">Crawling</a>
         <a href="indexing.html">Indexing</a>
         <a href="ranking.html">Ranking</a>
     </nav>
@@ -26,7 +38,10 @@
             For example, Google's web crawler is called <strong>Googlebot</strong>. These bots move from page to page, collecting 
             information and checking for updates so search engines can keep their results fresh and accurate.
         </p>
-        <img src="img/Crawler_Workflow.png" alt="Web Crawler Workflow">
+        <figure>
+            <img src="img/Crawler_Workflow.png" alt="Web Crawler Workflow">
+            <figcaption>How Web Crawlers Work</figcaption>
+        </figure>
         <h2>How Crawlers Decide What to Visit</h2>
         <p>
             Search engines cannot crawl every page on the internet constantly, so they use algorithms to decide which pages should be
