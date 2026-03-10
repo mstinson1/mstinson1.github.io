@@ -8,14 +8,22 @@ body {
 }
 
 header {
-    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-header, main, nav {
+h1 {
+    font-family: "Google Sans", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 3px rgb(210, 210, 210);
+}
+
+main {
     text-align: left;
 }
 
-h1, h2, h3 {
+h2, h3 {
     /* Montserrat Font */
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -31,9 +39,7 @@ nav {
 }
 
 nav a {
-    padding: 15px;
-    padding-bottom: 4px;
-    font-size: 1.8em;
+    font-size: 1.5em;
     padding: 14px 16px;
     text-decoration: none;
     color: black;
@@ -52,23 +58,39 @@ nav a:hover {
 
 nav a.active {
     background-color: rgb(255, 255, 255);
-    color: red;
+    color: #4285F4;
     border-radius: 6px;
-    text-shadow: 2px 2px 1px rgb(199, 199, 199);
+    text-shadow: 2px 2px 1px rgb(207, 205, 205);
 }
 
 figure {
-    width: 1000px;
+    /* width: 1000px;
+    margin: 0 auto; */
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
 }
 
 figure img {
     width: 100%;
     height: auto;
+    box-shadow: 2px 2px 10px rgb(207, 205, 205);
 }
 
 figcaption {
     text-align: left;
+    margin-top: 6px;
+}
+
+section {
+    margin-top: 20px;
+}
+
+summary {
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin-top: 15px;
 }
 
 footer {
