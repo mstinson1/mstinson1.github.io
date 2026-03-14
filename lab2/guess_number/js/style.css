@@ -2,17 +2,26 @@ body {
     margin: 0;
     background-image: url("../img/numbersBackground.jpg");
     background-repeat: repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+header, #main, #prevGuess, #attempts {
+    width: 70%;
+    max-width: 800px;
 }
 
 header {
     background-color: rgba(3, 74, 96, 0.834);
     color: white;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-radius: 15px;
     padding: 5px;
     margin: 10px auto;
-    width: 75%;
     text-shadow: 4px 4px 4px #050505;
     box-shadow: 2px 2px 8px #050505;
 
@@ -27,29 +36,90 @@ header {
     "ELXP" 0;
 }
 
+.gameBtn {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    background-color: rgba(251, 250, 250, 0.834);
+    color: rgb(10, 10, 10);
+    box-shadow: 2px 2px 6px #050505;
+}
+
 #main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100px;
     background-color: white;
     margin: 10px auto;
-    width: 75%;
     padding: 10px;
-    text-align: center;
     border-radius: 15px;
+    box-shadow: 2px 2px 8px #050505;
+    color: rgb(1, 1, 1);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+}
+
+#feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    margin: 15px auto;
+    padding: 10px;
+    width: 60%;
+    max-width: 700px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    /* text-shadow: 2px 2px 8px #333232; */
+
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    background-image: url("../img/warning.jpg");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    /* border: 2px solid #ffeeba; */
+
+    box-shadow: 2px 2px 8px #050505;
+}
+
+#prevGuess, #attempts {
+    margin: 10px auto;
+    padding: 12px 16px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px #050505;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 #prevGuess {
-    background-color: lightyellow;
-    margin: 10px auto;
-    width: 75%;
-    padding: 5px;
-    border-radius: 15px;
+    background-color: #fff8c6;
+    color: #7a5a00;
 }
 
 #attempts {
-    background-color: lightcoral;
-    margin: 10px auto;
-    width: 75%;
-    padding: 5px;
-    border-radius: 15px;
+    background-color: #ffd6d6;
+    color: #8b1e1e;
+}
+
+#guesses {
+    font-weight: bold;
+}
+
+#attemptsLeft {
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 #scoreboard {
@@ -58,18 +128,20 @@ header {
     align-items: center;
     text-align: center;
     color: white;
-    text-shadow: 4px 4px 4px #050505;
-    font-size: 3rem;
+    text-shadow: 1px 1px 2px #333232;
+    font-size: 2rem;
     margin: 10px auto;
     padding: 5px;
     width: 50%;
-    height: 100px;
+    max-width: 500px;
+    height: 50px;
     border-radius: 15px;
     font-family: "Luckiest Guy", cursive;
     font-weight: 400;
     font-style: normal;
 
     background-color: rgb(145, 242, 255);
+    box-shadow: 2px 2px 8px #050505;
 }
 
 footer {

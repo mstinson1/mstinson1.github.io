@@ -68,8 +68,10 @@ function checkGuess() {
             gameOver();
         } else if (guess > randomNumber) {
             feedback.textContent = "Guess was high";
+            feedback.style.color = "darkred";
         } else {
             feedback.textContent = "Guess was low";
+            feedback.style.color = "darkblue";
         }
     }
 }
