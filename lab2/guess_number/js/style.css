@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    background-image: url("../img/numbersBackground.jpg");
+    background-repeat: repeat;
+}
+
+header {
+    background-color: rgba(3, 74, 96, 0.834);
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px auto;
+    width: 75%;
+    text-shadow: 4px 4px 4px #050505;
+    box-shadow: 2px 2px 8px #050505;
+
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+#main {
+    background-color: white;
+    margin: 10px auto;
+    width: 75%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#prevGuess {
+    background-color: lightyellow;
+    margin: 10px auto;
+    width: 75%;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#attempts {
+    background-color: lightcoral;
+    margin: 10px auto;
+    width: 75%;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 4px 4px 4px #050505;
+    font-size: 3rem;
+    margin: 10px auto;
+    padding: 5px;
+    width: 50%;
+    height: 100px;
+    border-radius: 15px;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: rgb(145, 242, 255);
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 8px #050505;
+    font-size: small;
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
