@@ -15,7 +15,7 @@ header, #main, #prevGuess, #attempts {
 }
 
 header {
-    background-color: rgba(3, 74, 96, 0.834);
+    background-color: rgba(108, 209, 240, 0.834);
     color: white;
     text-align: center;
     font-size: 1.8rem;
