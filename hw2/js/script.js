@@ -1,4 +1,5 @@
 document.querySelector("button").addEventListener("click", gradeQuiz);
+var score = 0;
 
 // Functions
 function isFormValid() {
@@ -10,6 +11,19 @@ function isFormValid() {
     return isValid;
 }
 
+function rightAnswer(index) {
+    document.querySelector(`#q${index}Feedback`).innerHTML = "Correct!";
+    document.querySelector(`#q${index}Feedback`).className = "bg-success text-white";
+    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/checkmark.png' alt='Checkmark'>";
+    score += 20;
+}
+
+function wrongAnswer(index) {
+    document.querySelector(`#q${index}Feedback`).innerHTML = "Incorrect!";
+    document.querySelector(`#q${index}Feedback`).className = "bg-warning text-white";
+    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/xmark.png' alt='xmark'>";
+}
+
 function gradeQuiz() {
     console.log("Grading quiz...");
     document.querySelector("#validationFdbk").innerHTML = ""; //resets validation fdbk
@@ -18,7 +32,7 @@ function gradeQuiz() {
     }
 
     // variables
-    let score = 0;
+    score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
     console.log(q1Response);
@@ -26,27 +40,17 @@ function gradeQuiz() {
 
     // grading question 1
     if (q1Response == "sacramento") {
-        document.querySelector("#q1Feedback").innerHTML = "Correct!";
-        document.querySelector("#q1Feedback").className = "bg-success text-white";
-        document.querySelector("#markImg1").innerHTML = "<img src='img/checkmark.png' alt='Checkmark'>";
-        score += 20;
+        rightAnswer(1);
     } else {
-        document.querySelector("#q1Feedback").innerHTML = "Incorrect!";
-        document.querySelector("#q1Feedback").className = "bg-warning text-white";
-        document.querySelector("#markImg1").innerHTML = "<img src='img/xmark.png' alt='xmark'>";
+        wrongAnswer(1);
     }
 
     // grading question 2
     if (q2Response == "mo") {
-        document.querySelector("#q2Feedback").innerHTML = "Correct!";
-        document.querySelector("#q2Feedback").className = "bg-success text-white";
-        document.querySelector("#markImg2").innerHTML = "<img src='img/checkmark.png' alt='Checkmark'>";
-        score += 20;
+        rightAnswer(2);
     } else {
-        document.querySelector("#q2Feedback").innerHTML = "Incorrect!";
-        document.querySelector("#q2Feedback").className = "bg-warning text-white";
-        document.querySelector("#markImg2").innerHTML = "<img src='img/xmark.png' alt='xmark'>";
+        wrongAnswer(2);
     }
-    
+
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
 }
