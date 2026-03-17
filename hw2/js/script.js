@@ -77,7 +77,12 @@ function gradeQuiz() {
         wrongAnswer(4);
     }
 
-
+    // total score color
+    if (score < 80) {
+        document.querySelector("#totalScore").className = "text-danger";
+    } else {
+        document.querySelector("#totalScore").className = "text-success";
+    }
 
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
     document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
