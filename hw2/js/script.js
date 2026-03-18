@@ -25,7 +25,7 @@ function rightAnswer(index) {
     document.querySelector(`#q${index}Feedback`).innerHTML = "Correct!";
     document.querySelector(`#q${index}Feedback`).className = "bg-success text-white";
     document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/checkmark.png' alt='Checkmark'>";
-    score += 20;
+    score += 10;
 }
 
 function wrongAnswer(index) {
@@ -48,6 +48,18 @@ function gradeQuiz() {
     let q4Response = document.querySelector("input[name=q4]:checked").value;
     console.log(q1Response);
     console.log(q2Response);
+    console.log(q4Response);
+    let q5Response = document.querySelector("#q5").value;
+    console.log(q5Response);
+    let q6Response = document.querySelector("#q6").value;
+    console.log(q6Response);
+    let q7Response = document.querySelector("#q7").value;
+    console.log(q7Response);
+    let q8Response = document.querySelector("#q8").value;
+    console.log(q8Response);
+    let q9Response = document.querySelector("input[name=q9]:checked").value;
+    console.log(q9Response);
+
 
     // grading question 1
     if (q1Response == "sacramento") {
@@ -77,11 +89,61 @@ function gradeQuiz() {
         wrongAnswer(4);
     }
 
+    // grading question 5
+    if (q5Response == "4") {
+        rightAnswer(5);
+    } else {
+        wrongAnswer(5);
+    }
+
+    // grading question 6
+    if (q6Response == "1850-09-09") {
+        rightAnswer(6);
+    } else {
+        wrongAnswer(6);
+    }
+
+    // grading question 7
+    if (q7Response == "50") {
+        rightAnswer(7);
+    } else {
+        wrongAnswer(7);
+    }
+
+    // grading question 8
+    if (q8Response == "ca") {
+        rightAnswer(8);
+    } else {
+        wrongAnswer(8);
+    }
+
+    // grading question 9
+    if (q9Response == "alaska") {
+        rightAnswer(9);
+    } else {
+        wrongAnswer(9);
+    }
+
+    // grading question 10
+    if (document.querySelector("#oregon").checked && document.querySelector("#nevada").checked &&
+        document.querySelector("#arizona").checked && !document.querySelector("#texas").checked
+    ) {
+        rightAnswer(10);
+    } else {
+        wrongAnswer(10);
+    }
+
     // total score color
     if (score < 80) {
         document.querySelector("#totalScore").className = "text-danger";
     } else {
         document.querySelector("#totalScore").className = "text-success";
+    }
+
+    // congratulatory message
+    if (score > 80) {
+        document.querySelector("#Congratulatory").className = "text-success";
+        document.querySelector("#Congratulatory").innerHTML = "Congratulations!"
     }
 
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
