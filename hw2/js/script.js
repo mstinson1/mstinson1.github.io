@@ -144,6 +144,8 @@ function gradeQuiz() {
     if (score > 80) {
         document.querySelector("#Congratulatory").className = "text-success";
         document.querySelector("#Congratulatory").innerHTML = "Congratulations!"
+    } else {
+        document.querySelector("#Congratulatory").innerHTML = ""
     }
 
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
