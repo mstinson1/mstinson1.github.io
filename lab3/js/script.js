@@ -55,9 +55,23 @@ async function checkUsername() {
 function validateForm(e) {
     let isValid = true;
     let username = document.querySelector("#username").value;
+    let password = document.querySelector("#password").value;
+    let password2 = document.querySelector("#password2").value;
     if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username Required!";
         usernameError.style.color = "red";
+        isValid = false;
+    }
+
+    if (password.length < 6) {
+        document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters!";
+        passwordError.style.color = "red";
+        isValid = false;
+    }
+
+    if (password != password2) {
+        document.querySelector("#passwordError").innerHTML = "Passwords do not match!"
+        passwordError.style.color = "red";
         isValid = false;
     }
 
