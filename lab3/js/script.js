@@ -20,9 +20,9 @@ async function displayCity() {
     let data = await response.json();
     let zipError = document.querySelector("#zipError");
     // console.log(data);
-    document.querySelector("#city").innerHTML = data.city;
-    document.querySelector("#latitude").innerHTML = data.latitude;
-    document.querySelector("#longitude").innerHTML = data.longitude;
+    document.querySelector("#city").value = data.city;
+    document.querySelector("#latitude").value = data.latitude;
+    document.querySelector("#longitude").value = data.longitude;
     if (!data.city) {
         zipError.innerHTML = "Zip code not found!";
         zipError.style.color = "red";
@@ -34,7 +34,7 @@ async function displayStates() {
     let response = await fetch(url);
     let data = await response.json();
     let stateList = document.querySelector("#state");
-    stateList.innerHTML = "<option> Select State </option>";
+    stateList.innerHTML = "<option> select state here</option>";
     for (let i = 0; i < data.length; i++) {
         stateList.innerHTML += `<option value="${data[i].usps.toLowerCase()}">${data[i].state}</option>`;
     }
@@ -49,7 +49,7 @@ async function displayCounties() {
     let response = await fetch(url);
     let data = await response.json();
     let countyList = document.querySelector("#county");
-    countyList.innerHTML = "<option> Select County </option>";
+    countyList.innerHTML = "<option> select county here </option>";
     for (let i = 0; i < data.length; i++) {
         countyList.innerHTML += `<option> ${data[i].county} </option>`;
     }

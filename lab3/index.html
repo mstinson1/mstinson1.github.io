@@ -2,40 +2,153 @@
 <html>
 <head>
    <title> Sign Up Page </title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <h1> Sign Up </h1>
+<body style="background-image: url('img/hearts-seamless.jpg');">
+    <div class="text-center mt-4 mb-4">
+        <h1 class="fw-bold"> Create Your Account </h1>
+        <p class="text-muted">Sign up to get started!</p>
+    </div>
+    
     <form id="signupForm" action="welcome.html">
-        First Name:<input type="text" name="fName"><br>
-        Last Name: <input type="text" name="lName"><br>
-        Gender:    
-            <input type="radio" name="gender" value="m">Male<br>
-            <input type="radio" name="gender" value="f">Female<br>	
-        Zip Code:  <input type="text" id="zip" name="zip">
-        <span id="zipError"></span><br>
-        City:   <span id="city"></span> <br>
-        Latitude:  <span id="latitude"></span><br>
-        Longitude: <span id="longitude"></span><br><br>
 
-        State: 
-        <select id="state" name="state">
-                <!-- <option>Select One</option>
-                <option value="ca">California</option>
-                <option value="ny">New York</option>
-                <option value="tx">Texas</option> -->
-        </select> <br>
+        <!-- Name and Gender Card -->
+        <div class="card w-75 mx-auto shadow-sm">
+            <div class="card-body">
+                <p class="text-muted mb-1">Please enter your first and last name</p>
+                <div class="row mb-3">
+                    <div class="col">
+                        <!-- First Name:<input type="text" name="fName"><br> -->
+                        <input type="text" class="form-control" placeholder="First name" aria-label="fName">
+                    </div>
+                    <div class="col">
+                        <!-- Last Name: <input type="text" name="lName"><br> -->
+                        <input type="text" class="form-control" placeholder="Last name" aria-label="lName">
+                    </div>
+                </div>
+                
+                <div class="row mb-3 align-items-center">
+                    <!-- Gender:    
+                    <input type="radio" name="gender" value="m">Male<br>
+                    <input type="radio" name="gender" value="f">Female<br>	 -->
+                    <div class="col-3">
+                        <label class="form-label">Gender</label>
+                    </div>
 
-        Select a County: <select id="county"></select><br>
+                    <div class="col d-flex align-items-center">
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="m">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
 
-        Desired Username: 
-        <input type="text" id="username" ><br>
-        <span id="usernameError"></span><br>
-        Password: <input id="password" type="password">
-        <span id="suggestedPwd"></span> <br>
-            Type Password Again: <input id="password2" type="password"><br>
-        <span id="passwordError"></span><br>
-            <input type="submit" value="Sign up!">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="f">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Card -->
+        <div class="card w-75 mx-auto mt-3 shadow-sm">
+            <div class="card-body">
+                <p class="text-muted mb-1">Where are you located?</p>
+                <div class="row w-75 mx-auto mb-3">
+                    <!-- Zip Code:  <input type="text" id="zip" name="zip">
+                    <span id="zipError"></span><br>
+                    City:   <span id="city"></span> <br>
+                    Latitude:  <span id="latitude"></span><br>
+                    Longitude: <span id="longitude"></span><br><br> -->
+                    <div class="col-3">
+                    <label for="zip" class="form-label">Zip Code</label>
+                    </div>
+                        <div class="col">
+                        <input type="text" id="zip" name="zip" class="form-control">
+                        <div id="zipError" class="text-danger"></div>
+                    </div>
+                </div>
+                <div class="row w-75 mx-auto mb-3">
+                    <div class="col">
+                        <label class="form-label">City</label>
+                        <input type="text" id="city" class="form-control bg-light" readonly>
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label">Latitude</label>
+                        <input type="text" id="latitude" class="form-control bg-light" readonly>
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label">Longitude</label>
+                        <input type="text" id="longitude" class="form-control bg-light" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3 w-75 mx-auto">
+                    <div class="col">
+                        <!-- State: <select id="state" name="state"></select> <br> -->
+                        <label for="state" class="form-label">State</label>
+                        <select id="state" name="state" class="form-select"></select>
+                    </div>
+                            
+                    <div class="col">
+                        <!-- Select a County: <select id="county"></select><br> -->
+                        <label for="county" class="form-label">County</label>
+                        <select id="county" name="county" class="form-select"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Username and Password Card -->
+        <div class="card w-50 mx-auto shadow-sm mt-3">
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <!-- Desired Username: 
+                        <input type="text" id="username" ><br>
+                        <span id="usernameError"></span><br> -->
+                        <label for="username" class="form-label">Username</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" id="username" class="form-control">
+                        <div id="usernameError"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <!-- Password: <input id="password" type="password">
+                        <span id="suggestedPwd"></span> <br> -->
+                        <label for="password" class="form-label">Password</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="password" id="password" class="form-control">
+                        <div id="suggestedPwd" class="form-text"></div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <!-- Type Password Again: <input id="password2" type="password"><br>
+                        <span id="passwordError"></span><br> -->
+                        <label for="password2" class="form-label">Confirm Password</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="password" id="password2" class="form-control">
+                        <div id="passwordError"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-75 mx-auto mt-3 text-center">
+            <button type="submit" class="btn btn-primary">Sign up!</button>
+        </div>
+        
     </form>
     <script src="js/script.js"></script>
 </body>
