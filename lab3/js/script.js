@@ -5,6 +5,8 @@ document.querySelector("#username").addEventListener("change", checkUsername);
 document.querySelector("#signupForm").addEventListener("submit", function(event) { 
     validateForm(event);
 });
+document.querySelector("#password").addEventListener("click", displaySuggestedPswd);
+document.querySelector("#password").addEventListener("change", clearSuggestedPswd);
 
 // functions
 
@@ -16,11 +18,29 @@ async function displayCity() {
     let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
     let response = await fetch(url);
     let data = await response.json();
+    let zipError = document.querySelector("#zipError");
     // console.log(data);
     document.querySelector("#city").innerHTML = data.city;
     document.querySelector("#latitude").innerHTML = data.latitude;
     document.querySelector("#longitude").innerHTML = data.longitude;
+    if (!data.city) {
+        zipError.innerHTML = "Zip code not found!";
+        zipError.style.color = "red";
+    }
 }
+
+async function displayStates() {
+    let url = `https://csumb.space/api/allStatesAPI.php`;
+    let response = await fetch(url);
+    let data = await response.json();
+    let stateList = document.querySelector("#state");
+    stateList.innerHTML = "<option> Select State </option>";
+    for (let i = 0; i < data.length; i++) {
+        stateList.innerHTML += `<option value="${data[i].usps.toLowerCase()}">${data[i].state}</option>`;
+    }
+}
+
+displayStates();
 
 // Document counties from Web API based on the two-letter abbreviation of a state
 async function displayCounties() {
@@ -78,4 +98,12 @@ function validateForm(e) {
     if (!isValid) {
         e.preventDefault();
     }
+}
+
+function displaySuggestedPswd() {
+    document.querySelector("#suggestedPwd").innerHTML = "Suggested Password: Password1";
+}
+
+function clearSuggestedPswd() {
+    document.querySelector("#suggestedPwd").innerHTML = "";
 }
