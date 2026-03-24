@@ -45,11 +45,19 @@
 
             <div class="cardBody">
                 <p>What type of space do you currently live in?</p>
-                <input type="radio" id="apartment" name="livingSpace" value="apartment">
-                <label for="apartment">Apartment</label>
-
-                <input type="radio" id="house" name="livingSpace" value="house">
-                <label for="house">House</label>
+                <div class="d-flex justify-content-center gap-5 flex-wrap">
+                    <label class="option-card">
+                        <img src="img/apartment.png" alt="apartment" class="option-img">
+                        <input type="radio" id="apartment" name="livingSpace" value="apartment">
+                        <div>Apartment</div>
+                    </label>
+                
+                    <label class="option-card">
+                        <img src="img/house.png" alt="house" class="option-img">
+                        <input type="radio" id="house" name="livingSpace" value="house">
+                        <div>House</div>
+                </label>
+                </div>
             </div>
 
 
@@ -66,17 +74,34 @@
 
             <div class="cardBody">
                 <p>What kind of personality are you looking for?</p>
-                <input type="radio" id="playful" name="personality" value="playful">
-                <label for="playful">Playful</label>
 
-                <input type="radio" id="cuddly" name="personality" value="cuddly">
-                <label for="cuddly">Cuddly</label>
+                <div class="d-flex justify-content-center gap-5 flex-wrap">
+                    <label class="option-card">
+                        <img src="img/playful.png" alt="playful" class="option-img">
+                        <input type="radio" id="playful" name="personality" value="playful">
+                        <div>Playful</div>
+                    </label>
 
-                <input type="radio" id="protective" name="personality" value="protective">
-                <label for="protective">Protective</label>
+                    <label class="option-card">
+                        <img src="img/cuddly.png" alt="cuddly" class="option-img">
+                        <input type="radio" id="cuddly" name="personality" value="cuddly">
+                        <div>Cuddly</div>
+                    </label>
+                    
 
-                <input type="radio" id="easygoing" name="personality" value="easygoing">
-                <label for="easygoing">Easygoing</label>
+                    <label class="option-card">
+                        <img src="img/protective.png" alt="protective" class="option-img">
+                        <input type="radio" id="protective" name="personality" value="protective">
+                        <div>Protective</div>
+                    </label>
+                    
+                    <label class="option-card">
+                        <img src="img/easygoing.png" alt="easygoing" class="option-img">
+                        <input type="radio" id="easygoing" name="personality" value="easygoing">
+                        <div>Easygoing</div>
+                    </label>
+                    
+                </div>
             </div>
             <div class="text-center my-3">
                 <input id="submit" type="submit" value="Find My Match" class="btn btn-info">
