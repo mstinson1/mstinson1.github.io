@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HW3: Dog Match</title>
+
+    </head>
+    <body>
+        <h1>Which Dog Matches You?</h1>
+        <p>Answer a few questions to find a dog breed that matches your lifestyle.</p>
+
+        <form id="perfectMatchForm">
+            <label for="energyLevel">What energy level do you prefer in a dog?</label>
+            <select name="energyLevel" id="energyLevel">
+                <option value="">Select One</option>                
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <br><br>
+
+            <p>What type of space do you currently live in?</p>
+            <input type="radio" name="livingSpace" value="apartment">
+            <label for="apartment">Apartment</label>
+
+            <input type="radio" name="livingSpace" value="house">
+            <label for="apartment">House</label>
+            <br><br>
+
+            <label for="size">What size dog would you like?</label>
+            <select name="size" id="size">
+                <option value="">Select One</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xlarge">Extra Large</option>
+            </select>
+            <br><br>
+
+            <p>What kind of personality are you looking for?</p>
+            <input type="radio" name="personality" value="playful">
+            <label for="playful">Playful</label>
+
+            <input type="radio" name="personality" value="cuddly">
+            <label for="cuddly">Cuddly</label>
+
+            <input type="radio" name="personality" value="protective">
+            <label for="protective">Protective</label>
+
+            <input type="radio" name="personality" value="easygoing">
+            <label for="easygoing">Easygoing</label>
+
+            <br><br>
+
+            <input type="submit" value="Find My Match">
+            <br><br>
+
+            <div id="result"></div>
+        </form>
+        <script src="js/script.js"></script>
+        <footer>
+            <hr>
+            CST336 Internet Programming. 2026&copy; Stinson <br>
+            <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
+            It is used for academic purposes only.
+        </footer>
+    </body>
+</html>
