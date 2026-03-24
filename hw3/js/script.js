@@ -1,5 +1,6 @@
 // event listener
 document.querySelector("#perfectMatchForm").addEventListener("submit", findMyDog);
+document.querySelector("#reset").addEventListener("click", resetForm)
 
 async function findMyDog(event) {
     event.preventDefault();
@@ -20,10 +21,10 @@ async function findMyDog(event) {
     personality = personality.value;
     let breedName = "";
 
-    if (energyLevel === "low" && size === "small" && personality === "cuddly" && livingSpace === "apartment") {
+    if (energyLevel === "low" && size === "small" && livingSpace === "apartment") {
         breedName = "french bulldog";
     }
-    else if (energyLevel === "low" && size === "small" && personality === "cuddly" && livingSpace === "house") {
+    else if (energyLevel === "low" && size === "small" && livingSpace === "house") {
         breedName = "cavalier king charles spaniel";
     }
     else if (energyLevel === "low" && size === "small" && personality === "playful" && livingSpace === "apartment") {
@@ -39,9 +40,9 @@ async function findMyDog(event) {
         breedName = "irish wolfhound";
     } else if (energyLevel === "medium" && size === "small" && personality === "playful" && livingSpace === "apartment") {
         breedName = "australian terrier";
-    } else if (energyLevel === "medium" && size === "small" && personality === "cuddly" && livingSpace === "house") {
+    } else if (energyLevel === "medium" && size === "small" && livingSpace === "house") {
         breedName = "bichon";
-    } else if (energyLevel === "medium" && size === "medium" && personality === "cuddly" && livingSpace === "house") {
+    } else if (energyLevel === "medium" && size === "medium" && livingSpace === "house") {
         breedName = "cocker spaniel";
     }
     else if (energyLevel === "medium" && size === "medium" && personality === "easygoing" && livingSpace === "house") {
@@ -67,12 +68,24 @@ async function findMyDog(event) {
     else if (energyLevel === "high" && size === "large" && personality === "protective" && livingSpace === "house") {
         breedName = "german shepherd";
     } else {
-        breedName = "golden retriever";
+        if (size === "small") {
+            breedName = "pomeranian";
+        } else if (size === "medium") {
+            breedName = "poodle";
+        } else if (size === "large") {
+            breedName = "golden retriever";
+        } else {
+            breedName = "great dane";
+        }
+        
     }
 
     let breedData = await getBreedData(breedName);
 
     // display the results
+    if (!breedData[0].life_span) {
+        breedData[0].life_span = "Many";
+    }
     document.querySelector("#result").innerHTML = `
     <h2>Your dog match is: ${breedData[0].name}</h2>
     <img src="${breedData[0].image.url}" alt="${breedData[0].name}" width="300"><br>
@@ -91,4 +104,9 @@ async function getBreedData(breedName) {
         });
     let data = await response.json();
     return data;
+}
+
+function resetForm() {
+    document.querySelector("#result").innerHTML = "";
+    document.querySelector("#result").style.display = "none";
 }
