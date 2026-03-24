@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>HW3: Dog Match</title>
-
+        <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
         <h1>Which Dog Matches You?</h1>
@@ -20,11 +20,11 @@
             <br><br>
 
             <p>What type of space do you currently live in?</p>
-            <input type="radio" name="livingSpace" value="apartment">
+            <input type="radio" id="apartment" name="livingSpace" value="apartment">
             <label for="apartment">Apartment</label>
 
-            <input type="radio" name="livingSpace" value="house">
-            <label for="apartment">House</label>
+            <input type="radio" id="house" name="livingSpace" value="house">
+            <label for="house">House</label>
             <br><br>
 
             <label for="size">What size dog would you like?</label>
@@ -38,24 +38,24 @@
             <br><br>
 
             <p>What kind of personality are you looking for?</p>
-            <input type="radio" name="personality" value="playful">
+            <input type="radio" id="playful" name="personality" value="playful">
             <label for="playful">Playful</label>
 
-            <input type="radio" name="personality" value="cuddly">
+            <input type="radio" id="cuddly" name="personality" value="cuddly">
             <label for="cuddly">Cuddly</label>
 
-            <input type="radio" name="personality" value="protective">
+            <input type="radio" id="protective" name="personality" value="protective">
             <label for="protective">Protective</label>
 
-            <input type="radio" name="personality" value="easygoing">
+            <input type="radio" id="easygoing" name="personality" value="easygoing">
             <label for="easygoing">Easygoing</label>
 
             <br><br>
 
             <input type="submit" value="Find My Match">
             <br><br>
-
-            <div id="result"></div>
+            <div id="result" class="resultCard"></div>
+            
         </form>
         <script src="js/script.js"></script>
         <footer>

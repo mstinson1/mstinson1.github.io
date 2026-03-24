@@ -38,8 +38,9 @@ async function findMyDog(event) {
         breedName = "irish wolfhound";
     } else if (energyLevel === "medium" && size === "small" && personality === "playful" && livingSpace === "apartment") {
         breedName = "australian terrier";
-    }
-    else if (energyLevel === "medium" && size === "medium" && personality === "cuddly" && livingSpace === "house") {
+    } else if (energyLevel === "medium" && size === "small" && personality === "cuddly" && livingSpace === "house") {
+        breedName = "bichon";
+    } else if (energyLevel === "medium" && size === "medium" && personality === "cuddly" && livingSpace === "house") {
         breedName = "cocker spaniel";
     }
     else if (energyLevel === "medium" && size === "medium" && personality === "easygoing" && livingSpace === "house") {
@@ -78,6 +79,7 @@ async function findMyDog(event) {
     <p><strong>Life Span:</strong> ${breedData[0].life_span} years</p>
     <p><strong>History:</strong> ${breedData[0].history}</p>
     `;
+    document.querySelector("#result").style.display = "block";
 }
 
 async function getBreedData(breedName) {
