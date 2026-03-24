@@ -4,55 +4,64 @@
         <meta charset="UTF-8">
         <title>HW3: Dog Match</title>
         <link href="css/styles.css" rel="stylesheet">
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </head>
-    <body>
-        <h1>Which Dog Matches You?</h1>
-        <p>Answer a few questions to find a dog breed that matches your lifestyle.</p>
+    <body style="background-image: url('img/pawprint.webp');">
+        <div id="heading" class="text-center mt-4 mb-4">
+            <h1 class="fw-bold">Which Dog Matches You?</h1>
+            <p>Answer a few questions to find a dog breed that matches your lifestyle.</p>
+        </div>
+        
 
         <form id="perfectMatchForm">
-            <label for="energyLevel">What energy level do you prefer in a dog?</label>
-            <select name="energyLevel" id="energyLevel">
-                <option value="">Select One</option>                
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-            </select>
-            <br><br>
+            <div class="cardBody">
+                <label for="energyLevel">What energy level do you prefer in a dog?</label>
+                <select name="energyLevel" id="energyLevel">
+                    <option value="">Select One</option>                
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
 
-            <p>What type of space do you currently live in?</p>
-            <input type="radio" id="apartment" name="livingSpace" value="apartment">
-            <label for="apartment">Apartment</label>
+            <div class="cardBody">
+                <p>What type of space do you currently live in?</p>
+                <input type="radio" id="apartment" name="livingSpace" value="apartment">
+                <label for="apartment">Apartment</label>
 
-            <input type="radio" id="house" name="livingSpace" value="house">
-            <label for="house">House</label>
-            <br><br>
+                <input type="radio" id="house" name="livingSpace" value="house">
+                <label for="house">House</label>
+            </div>
 
-            <label for="size">What size dog would you like?</label>
-            <select name="size" id="size">
-                <option value="">Select One</option>
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="xlarge">Extra Large</option>
-            </select>
-            <br><br>
 
-            <p>What kind of personality are you looking for?</p>
-            <input type="radio" id="playful" name="personality" value="playful">
-            <label for="playful">Playful</label>
+            <div class="cardBody">
+                <label for="size">What size dog would you like?</label>
+                <select name="size" id="size">
+                    <option value="">Select One</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="xlarge">Extra Large</option>
+                </select>
+            </div>
 
-            <input type="radio" id="cuddly" name="personality" value="cuddly">
-            <label for="cuddly">Cuddly</label>
+            <div class="cardBody">
+                <p>What kind of personality are you looking for?</p>
+                <input type="radio" id="playful" name="personality" value="playful">
+                <label for="playful">Playful</label>
 
-            <input type="radio" id="protective" name="personality" value="protective">
-            <label for="protective">Protective</label>
+                <input type="radio" id="cuddly" name="personality" value="cuddly">
+                <label for="cuddly">Cuddly</label>
 
-            <input type="radio" id="easygoing" name="personality" value="easygoing">
-            <label for="easygoing">Easygoing</label>
+                <input type="radio" id="protective" name="personality" value="protective">
+                <label for="protective">Protective</label>
 
-            <br><br>
+                <input type="radio" id="easygoing" name="personality" value="easygoing">
+                <label for="easygoing">Easygoing</label>
+            </div>
 
-            <input type="submit" value="Find My Match">
+            <input id="submit" type="submit" value="Find My Match">
             <br><br>
             <div id="result" class="resultCard"></div>
             

@@ -12,6 +12,7 @@ async function findMyDog(event) {
     if (energyLevel === "" || size === "" || livingSpace === null || personality === null) {
         document.querySelector("#result").innerHTML = "Please answer all questions first."
         result.style.color = "red";
+        document.querySelector("#result").style.display = "block";
         return;
     }
 

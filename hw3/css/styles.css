@@ -8,6 +8,23 @@
     max-width: 500px;
     text-align: center;
 }
+.cardBody {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+#heading {
+    background-color: rgb(1, 0, 0);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    color: white;
+    border-radius: 5px;
+}
+
 
 footer {
     text-align: center;
