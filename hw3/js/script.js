@@ -9,7 +9,7 @@ async function findMyDog(event) {
     let livingSpace = document.querySelector('input[name="livingSpace"]:checked');
     let personality = document.querySelector('input[name="personality"]:checked')
 
-    // check if they left something blank
+    // validation to check if they left something blank
     if (energyLevel === "" || size === "" || livingSpace === null || personality === null) {
         document.querySelector("#result").innerHTML = "Please answer all questions first."
         result.style.color = "red";
@@ -21,63 +21,47 @@ async function findMyDog(event) {
     personality = personality.value;
     let breedName = "";
 
-    if (energyLevel === "low" && size === "small" && livingSpace === "apartment") {
-        breedName = "french bulldog";
-    }
-    else if (energyLevel === "low" && size === "small" && livingSpace === "house") {
-        breedName = "cavalier king charles spaniel";
-    }
-    else if (energyLevel === "low" && size === "small" && personality === "playful" && livingSpace === "apartment") {
-        breedName = "boston terrier";
-    }
-    else if (energyLevel === "low" && size === "small" && personality === "playful" && livingSpace === "house") {
-        breedName = "beagle";
-    }
-    else if (energyLevel === "low" && size === "small" && personality === "easygoing" && livingSpace === "house") {
-        breedName = "basset hound";
-    }
-    else if (energyLevel === "low" && size === "xlarge" && personality === "easygoing" && livingSpace === "house") {
-        breedName = "irish wolfhound";
-    } else if (energyLevel === "medium" && size === "small" && personality === "playful" && livingSpace === "apartment") {
-        breedName = "australian terrier";
-    } else if (energyLevel === "medium" && size === "small" && livingSpace === "house") {
-        breedName = "bichon";
-    } else if (energyLevel === "medium" && size === "medium" && livingSpace === "house") {
-        breedName = "cocker spaniel";
-    }
-    else if (energyLevel === "medium" && size === "medium" && personality === "easygoing" && livingSpace === "house") {
-        breedName = "olde english bulldog";
-    }
-    else if (energyLevel === "medium" && size === "large" && personality === "playful" && livingSpace === "house") {
-        breedName = "labrador retriever";
-    }
-    else if (energyLevel === "medium" && size === "large" && personality === "protective" && livingSpace === "house") {
-        breedName = "boxer";
-    } else if (energyLevel === "high" && size === "small" && personality === "playful" && livingSpace === "apartment") {
-    breedName = "miniature schnauzer";
-    }
-    else if (energyLevel === "high" && size === "medium" && personality === "playful" && livingSpace === "house") {
-        breedName = "australian cattle dog";
-    }
-    else if (energyLevel === "high" && size === "medium" && personality === "protective" && livingSpace === "house") {
-        breedName = "border collie";
-    }
-    else if (energyLevel === "high" && size === "large" && personality === "playful" && livingSpace === "house") {
-        breedName = "labrador retriever";
-    }
-    else if (energyLevel === "high" && size === "large" && personality === "protective" && livingSpace === "house") {
-        breedName = "german shepherd";
-    } else {
-        if (size === "small") {
-            breedName = "pomeranian";
-        } else if (size === "medium") {
-            breedName = "poodle";
-        } else if (size === "large") {
-            breedName = "golden retriever";
-        } else {
-            breedName = "great dane";
-        }
+    // Size: Small, Medium, and Large
+    // Energy Level: Low, Medium, High
+    // Living Space: Apartment or House
+    // Personality: Playful, Protective, Easygoing
+
+    switch (size) {
+        case "small":
+            if (energyLevel === "low" && personality === "playful") {
+                breedName = (livingSpace === "apartment") ? "pug" : "shih tzu";
+            } else if (energyLevel === "high" && personality === "protective") {
+                breedName = (livingSpace === "apartment") ? "miniature pinscher" : "australian terrier";
+            } else if (energyLevel === "medium" && personality === "easygoing") {
+                breedName = (livingSpace === "apartment") ? "french bulldog" : "cavalier king charles spaniel";
+            } else {
+                breedName = "pomeranian";
+            }
+            break;
         
+        case "medium":
+            if (energyLevel === "low" && personality === "playful") {
+                breedName = (livingSpace === "apartment") ? "french bulldog" : "basset hound";
+            } else if (energyLevel === "high" && personality === "protective") {
+                breedName = (livingSpace === "apartment") ? "staffordshire bull terrier" : "border collie";
+            } else if (energyLevel === "medium" && personality === "easygoing") {
+                breedName = (livingSpace === "apartment") ? "whippet" : "american bulldog";
+            } else {
+                breedName = "poodle";
+            }
+            break;
+
+        case "large":
+            if (energyLevel === "low" && personality === "playful") {
+                breedName = (livingSpace === "apartment") ? "greyhound" : "bernese mountain dog";
+            } else if (energyLevel === "high" && personality === "protective") {
+                breedName = (livingSpace === "apartment") ? "doberman pinscher" : "german shepherd";
+            } else if (energyLevel === "medium" && personality === "easygoing") {
+                breedName = (livingSpace === "apartment") ? "greyhound" : "golden retriever";
+            } else {
+                breedName = "great dane";
+            }
+            break;
     }
 
     let breedData = await getBreedData(breedName);
@@ -94,6 +78,7 @@ async function findMyDog(event) {
     <p><strong>History:</strong> ${breedData[0].history}</p>
     `;
     document.querySelector("#result").style.display = "block";
+    result.style.color = "black";
 }
 
 async function getBreedData(breedName) {
