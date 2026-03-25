@@ -78,7 +78,7 @@ async function findMyDog(event) {
     <p><strong>History:</strong> ${breedData[0].history}</p>
     `;
     document.querySelector("#result").style.display = "block";
-    result.style.color = "black";
+    document.querySelector("#result").style.color = "black";
 }
 
 async function getBreedData(breedName) {
