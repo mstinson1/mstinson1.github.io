@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <title>Midterm Prep</title>
+        <link rel="stylesheet" href="css/styles.css">
+        
+
+    </head>
+    <body id="randomBackground">
+        <h1>Midterm Prep: Famous Quotes</h1>
+        <p>This page generates a random quote, translates the quote, and displays author info.</p>
+
+        <!-- Show the quotes -->
+        <div id="randomQuote"></div>
+
+        <!-- Quote translation -->
+         <input type="radio" id="english" value="english" name="language"><label>English</label>
+         <input type="radio" id="french" value="french" name="language"><label>French</label>
+         <input type="radio" id="spanish" value="spanish" name="language"><label>Spanish</label>
+         <button id="btnTranslate">Translate</button>
+         <br><br>
+        
+        <!-- Display Author Button -->
+         <div id="authorResults"></div>
+        <button id="btnDisplayAuthor">Display Author Info</button>
+        <br><br>
+
+        <!-- Choose to display UP TO 5 quotes -->
+        Number of Quotes:
+        <input type="text" id="numOfQuotes" placeholder="1-5">
+        <button id="btnGetQuotes">Get Quotes</button>
+        <div id="numOfQuotesError"></div>
+        <div id="quoteResults"></div>
+        <br><br>
+
+        <footer>
+            <hr>
+            <p>
+                Midterm Prep: Mariah Stinson <br>
+                Class: CST336 Internet Programming
+            </p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>
