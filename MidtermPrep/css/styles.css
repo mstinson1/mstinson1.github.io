@@ -1,0 +1,122 @@
+.pageHeader {
+    background: linear-gradient(to right, rgba(63, 187, 254, 0.9), rgba(111, 66, 193, 0.9));
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    margin-bottom: 20px;
+}
+
+.pageHeader h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+}
+
+.pageHeader p {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.95;
+}
+
+.pageCardBox {
+    background-color: rgba(229, 229, 229, 0.5);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.cardBox {
+    background-color: white;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 2px;
+    padding: 20px;
+    margin: 40px;
+}
+
+.pageCardBox button {
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    transition: all 0.2s ease;
+}
+
+.pageCardBox button:hover {
+    background-color: #717171;
+}
+
+#randomQuote {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.radioOption {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    margin: 6px;
+    border-radius: 20px;
+    border: 2px solid #333;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+}
+
+.radioOption input {
+    display: none; /* hide default radio */
+}
+
+.radioOption:has(input:checked) {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+footer {
+    text-align: center;
+    font-size: small;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+img {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+
+/* this is for the author column implementaion */
+.authorFlex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    text-align: left;
+    margin:30px;
+    flex-wrap: wrap;
+}
+
+.authorImage {
+    flex: 0 0 200px;
+}
+
+.authorBio {
+    flex: 1;
+    min-width: 250px;
+    line-height: 1.6;
+    font-size: 16px;
+}

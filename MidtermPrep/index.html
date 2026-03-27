@@ -2,50 +2,80 @@
 <html lang="en">
     <head>
         <title>Midterm Prep</title>
+        <!-- connects external CSS file -->
         <link rel="stylesheet" href="css/styles.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!-- for the shuffle -->
         <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
 
     </head>
     <body id="randomBackground">
-        <h1>Midterm Prep: Famous Quotes</h1>
-        <p>This page generates a random quote, translates the quote, and displays author info.</p>
-
-        <!-- Show the quotes -->
-        <div id="randomQuote"></div>
-        <br><br>
-
-        <!-- Quote translation -->
-         <div id="languageFlag">
-            <img id="flagImg" src="img/english_flag.png" alt="english flag" width="125">
-         </div>
-         <div id="languageChoices"></div>
-         <!-- <input type="radio" id="english" value="english" name="language"><label>English</label>
-         <input type="radio" id="french" value="french" name="language"><label>French</label>
-         <input type="radio" id="spanish" value="spanish" name="language"><label>Spanish</label> -->
-         <button id="btnTranslate">Translate</button>
-         <br><br>
+        <div class="pageHeader text-center">
+            <h1>Midterm Prep: Famous Quotes</h1>
+            <p class="mt-3">This page generates a random quote, translates the quote, and displays author info.</p>
+        </div>
         
-        <!-- Display Author Button -->
-         <div id="authorResults"></div>
-        <button id="btnDisplayAuthor">Display Author Info</button>
-        <br><br>
+        <!-- main container holding all the cards -->
+        <div class="pageCardBox">
+            <br>
 
-        <!-- Choose to display UP TO 5 quotes -->
-        Number of Quotes:
-        <input type="text" id="numOfQuotes" placeholder="1-5">
-        <button id="btnGetQuotes">Get Quotes</button>
-        <div id="numOfQuotesError"></div>
-        <div id="quoteResults"></div>
-        <br><br>
+            <!-- Card 1: Random Quote and Translation-->
+            <div class="cardBox">
+                <!-- Show the quotes -->
+                <div id="randomQuote"></div>
+                <br>
+                <!-- Quote translation -->
+                <!-- Flag image changes depending on language -->
+                <div id="languageFlag">
+                    <img id="flagImg" src="img/english_flag.png" alt="english flag" width="125">
+                </div>
+                <br>
+                <p class="text-muted">Would you like to translate the above quote? Select a language below.</p>
+                
+                <!-- radio buttons for language selection (options in js) -->
+                <div id="languageChoices"></div>
+                <!-- <input type="radio" id="english" value="english" name="language"><label>English</label>
+                <input type="radio" id="french" value="french" name="language"><label>French</label>
+                <input type="radio" id="spanish" value="spanish" name="language"><label>Spanish</label> -->
+                <p class="text-muted">Click the button below to translate.</p>
+                <button id="btnTranslate">Translate</button>
+            </div>
+
+            <!-- Card 2: Author info-->
+            <div class="cardBox">
+                <!-- Display author image and bio-->
+                <div id="authorResults"></div>
+                <button id="btnDisplayAuthor">Display Author Info</button>
+            </div>
+            
+            <!-- Card 3: quote generator -->
+            <div class="cardBox">
+                <!-- Choose to display UP TO 5 quotes -->
+                <p class="text-muted">Want to see some more quotes?</p>
+                Number of Quotes:
+                <input type="text" id="numOfQuotes" placeholder="1-5">
+                <button id="btnGetQuotes">Get Quotes</button>
+
+                <!-- Validation error message -->
+                <div id="numOfQuotesError"></div>
+
+                <!-- Multiple quote output here -->
+                <div class="fw-bold" id="quoteResults"></div>
+            </div>
+            <br>
+        </div>
 
         <footer>
             <hr>
             <p>
                 Midterm Prep: Mariah Stinson <br>
-                Class: CST336 Internet Programming
+                CST336 Internet Programming. 2026&copy; Stinson <br>
+                This is for academic purposes only.
             </p>
         </footer>
+
+        <!-- JS file loads at end so HTML elements exist before JS runs -->
         <script src="js/script.js"></script>
     </body>
 </html>
