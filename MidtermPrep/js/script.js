@@ -13,11 +13,16 @@ async function translateQuote() {
     }   
 
     let lang = selectedLanguage.value;
+    let languageName = selectedLanguage.dataset.name;
 
     let url = `https://csumb.space/api/famousQuotes/translateQuote.php?lang=${lang}&quoteId=${currentQuote.quoteId}`;
     let response = await fetch(url);
     let data = await response.json();
+    let imageURL = selectedLanguage.value
     document.querySelector("#randomQuote").innerHTML = "\"" + data.translation + "\"" + " -" + currentQuote.firstName + " " + currentQuote.lastName;
+    document.querySelector("#flagImg").src = `img/${languageName}_flag.png`;
+    document.querySelector("#flagImg").alt = `${languageName} flag`;
+
 }
 
 async function getRandomBackground() {
@@ -79,14 +84,19 @@ async function getQuotes() {
 }
 
 function shuffleLanguage() {
-    let shuffledLanguagesArray = [{name: "english", code: "EN"},
+    let shuffledLanguagesArray = [
+        {name: "english", code: "EN"},
         {name: "french", code: "FR"},
-        {name: "spanish", code: "SP"}
+        {name: "spanish", code: "SP"},
+        {name: "esperanto", code: "ES"}
     ];
     shuffledLanguagesArray = _.shuffle(shuffledLanguagesArray);
+    document.querySelector("#languageChoices").innerHTML = "";
+
     for (let i = 0; i < shuffledLanguagesArray.length; i++) {
         document.querySelector("#languageChoices").innerHTML += `
-        <input type="radio" name="languages" id="${shuffledLanguagesArray[i].code}" value="${shuffledLanguagesArray[i].code}"> 
+        <input type="radio" name="languages" 
+        id="${shuffledLanguagesArray[i].code}" value="${shuffledLanguagesArray[i].code}" data-name="${shuffledLanguagesArray[i].name}"> 
         <label for="${shuffledLanguagesArray[i].code}"> ${shuffledLanguagesArray[i].name}</label>`;
     }
 }
