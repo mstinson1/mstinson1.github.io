@@ -1,8 +1,24 @@
 // event listeners
 document.querySelector("#btnDisplayAuthor").addEventListener("click", getAuthorInfo);
 document.querySelector("#btnGetQuotes").addEventListener("click", getQuotes);
+document.querySelector("#btnTranslate").addEventListener("click", translateQuote);
 shuffleLanguage();
 
+async function translateQuote() {
+    let selectedLanguage = document.querySelector('input[name="languages"]:checked');
+
+    if (!selectedLanguage) {
+        alert("Please select a language.");
+        return;
+    }   
+
+    let lang = selectedLanguage.value;
+
+    let url = `https://csumb.space/api/famousQuotes/translateQuote.php?lang=${lang}&quoteId=${currentQuote.quoteId}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    document.querySelector("#randomQuote").innerHTML = "\"" + data.translation + "\"" + " -" + currentQuote.firstName + " " + currentQuote.lastName;
+}
 
 async function getRandomBackground() {
     let url = `https://pixabay.com/api/?key=5589438-47a0bca778bf23fc2e8c5bf3e&per_page=50&orientation=horizontal&q=flowers`;
@@ -22,7 +38,7 @@ async function getRandomQuote() {
     let response = await fetch(url);
     let data = await response.json();
     currentQuote = data;
-    document.querySelector("#randomQuote").innerHTML = "\"" +data.quoteText+ "\"" + " -" + data.firstName + " " + data.lastName;
+    document.querySelector("#randomQuote").innerHTML = "\"" + data.quoteText+ "\"" + " -" + data.firstName + " " + data.lastName;
 }
 getRandomQuote();
 
@@ -57,15 +73,20 @@ async function getQuotes() {
     let output = ""
 
     for (let i = 0; i < numQuotes; i++) {
-        output += "\""+ data[i].quoteText + " -" + data[i].firstName + " " + data[i].lastName + "<br><br>";
+        output += "\""+ data[i].quoteText + "\" -" + data[i].firstName + " " + data[i].lastName + "<br><br>";
     }
     document.querySelector("#quoteResults").innerHTML = output;
 }
 
 function shuffleLanguage() {
-    let shuffledLanguagesArray = ["english", "french", "spanish"];
+    let shuffledLanguagesArray = [{name: "english", code: "EN"},
+        {name: "french", code: "FR"},
+        {name: "spanish", code: "SP"}
+    ];
     shuffledLanguagesArray = _.shuffle(shuffledLanguagesArray);
     for (let i = 0; i < shuffledLanguagesArray.length; i++) {
-        document.querySelector("#languageChoices").innerHTML += `<input type="radio" name="languages" id="${shuffledLanguagesArray[i]}" value="${shuffledLanguagesArray[i]}"> <label for="${shuffledLanguagesArray[i]}"> ${shuffledLanguagesArray[i]}</label>`;
+        document.querySelector("#languageChoices").innerHTML += `
+        <input type="radio" name="languages" id="${shuffledLanguagesArray[i].code}" value="${shuffledLanguagesArray[i].code}"> 
+        <label for="${shuffledLanguagesArray[i].code}"> ${shuffledLanguagesArray[i].name}</label>`;
     }
 }
