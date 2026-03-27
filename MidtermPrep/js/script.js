@@ -1,6 +1,8 @@
 // event listeners
 document.querySelector("#btnDisplayAuthor").addEventListener("click", getAuthorInfo);
 document.querySelector("#btnGetQuotes").addEventListener("click", getQuotes);
+shuffleLanguage();
+
 
 async function getRandomBackground() {
     let url = `https://pixabay.com/api/?key=5589438-47a0bca778bf23fc2e8c5bf3e&per_page=50&orientation=horizontal&q=flowers`;
@@ -58,4 +60,12 @@ async function getQuotes() {
         output += "\""+ data[i].quoteText + " -" + data[i].firstName + " " + data[i].lastName + "<br><br>";
     }
     document.querySelector("#quoteResults").innerHTML = output;
+}
+
+function shuffleLanguage() {
+    let shuffledLanguagesArray = ["english", "french", "spanish"];
+    shuffledLanguagesArray = _.shuffle(shuffledLanguagesArray);
+    for (let i = 0; i < shuffledLanguagesArray.length; i++) {
+        document.querySelector("#languageChoices").innerHTML += `<input type="radio" name="languages" id="${shuffledLanguagesArray[i]}" value="${shuffledLanguagesArray[i]}"> <label for="${shuffledLanguagesArray[i]}"> ${shuffledLanguagesArray[i]}</label>`;
+    }
 }

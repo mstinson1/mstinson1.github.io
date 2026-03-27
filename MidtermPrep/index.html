@@ -3,7 +3,8 @@
     <head>
         <title>Midterm Prep</title>
         <link rel="stylesheet" href="css/styles.css">
-        
+        <!-- for the shuffle -->
+        <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
 
     </head>
     <body id="randomBackground">
@@ -12,11 +13,13 @@
 
         <!-- Show the quotes -->
         <div id="randomQuote"></div>
+        <br><br>
 
         <!-- Quote translation -->
-         <input type="radio" id="english" value="english" name="language"><label>English</label>
+         <div id="languageChoices"></div>
+         <!-- <input type="radio" id="english" value="english" name="language"><label>English</label>
          <input type="radio" id="french" value="french" name="language"><label>French</label>
-         <input type="radio" id="spanish" value="spanish" name="language"><label>Spanish</label>
+         <input type="radio" id="spanish" value="spanish" name="language"><label>Spanish</label> -->
          <button id="btnTranslate">Translate</button>
          <br><br>
         
